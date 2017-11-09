@@ -9,11 +9,26 @@
 import UIKit
 
 class AboutViewController: UIViewController {
-
+    
+    @IBOutlet weak var motivationButton: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        motivationButton.layer.cornerRadius = 8
+        motivationButton.clipsToBounds = true
+        
+        let topColor = UIColor(red: 103/255, green: 125/255, blue: 253/255, alpha: 1)
+        let bottomColor = UIColor(red: 63/255, green: 91/255, blue: 254/255, alpha: 1)
+        
+        let gradientColors: [CGColor] = [topColor.cgColor, bottomColor.cgColor]
+        let gradientLocations: [Float] = [0.1, 1.0]
+        let gradientLayer: CAGradientLayer = CAGradientLayer()
+        
+        gradientLayer.colors = gradientColors
+        gradientLayer.locations = gradientLocations as [NSNumber]?
+        
+        gradientLayer.frame = self.view.bounds
+        self.view.layer.insertSublayer(gradientLayer, at: 0)
     }
 
     override func didReceiveMemoryWarning() {
