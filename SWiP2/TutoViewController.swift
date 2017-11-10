@@ -9,12 +9,21 @@
 import UIKit
 
 class TutoViewController: UIViewController {
+    
+    let data = UserDefaults.standard
 
+    @IBOutlet weak var endTuto: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        endTuto.layer.cornerRadius = 8
+        endTuto.clipsToBounds = true
     }
+    
+    @IBAction func changeData(_ sender: Any) {
+        self.data.set("VC1", forKey: "controller")
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

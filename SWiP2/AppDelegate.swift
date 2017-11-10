@@ -10,15 +10,33 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
     var window: UIWindow?
-
-
+    var initialViewController :UIViewController?
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        var controllerIdentifier = "VC2"
+        if let savedControllerIdentifier = UserDefaults.standard.object(forKey: "controller") as? String {
+            controllerIdentifier = savedControllerIdentifier
+        }
+        
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        // rootViewController
+        let rootViewController = mainStoryboard.instantiateViewController(withIdentifier: controllerIdentifier)
+        
+        
+        // self.window
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        
+        self.window!.rootViewController = rootViewController
+        
+        
         return true
     }
-
+    
+    
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.

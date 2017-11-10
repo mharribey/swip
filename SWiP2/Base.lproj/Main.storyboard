@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cTR-Mh-HJh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3XT-tP-x0y">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -21,7 +21,7 @@
         <!--View Controller-->
         <scene sceneID="Z5M-OL-jgN">
             <objects>
-                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="cTR-Mh-HJh" customClass="ViewController" customModule="SWiP2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VC1" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cTR-Mh-HJh" customClass="ViewController" customModule="SWiP2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SWJ-uc-OTW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -263,7 +263,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="101"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XPr-g5-tph">
-                                        <rect key="frame" x="297" y="-42" width="30" height="30"/>
+                                        <rect key="frame" x="297" y="-46" width="30" height="34"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="Averta-Black" family="Averta" pointSize="17"/>
                                         <state key="normal" title="X">
@@ -273,9 +273,27 @@
                                             <segue destination="cTR-Mh-HJh" kind="show" id="lI6-t1-euU"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CGH-3u-0N8">
+                                        <rect key="frame" x="316" y="35" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="GOS-HF-HLS"/>
+                                            <constraint firstAttribute="height" constant="30" id="KXc-IY-4mB"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="30" id="Ow3-KS-UdT"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Averta-Black" family="Averta" pointSize="17"/>
+                                        <state key="normal" title="X">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="cTR-Mh-HJh" kind="show" id="JVq-Kz-Nfb"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.40392156862745099" green="0.49019607843137253" blue="0.99215686274509807" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstItem="CGH-3u-0N8" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="dfk-A0-gZV" secondAttribute="leading" constant="20" symbolic="YES" id="6EP-JQ-xqJ"/>
+                                    <constraint firstItem="CGH-3u-0N8" firstAttribute="top" secondItem="dfk-A0-gZV" secondAttribute="top" constant="35" id="Iwg-Nq-NzM"/>
+                                    <constraint firstAttribute="trailing" secondItem="CGH-3u-0N8" secondAttribute="trailing" constant="29" id="lON-uY-dqZ"/>
                                     <constraint firstAttribute="height" constant="101" id="vEc-sU-NEP"/>
                                     <constraint firstAttribute="width" constant="375" id="xkW-MW-DUm"/>
                                 </constraints>
@@ -325,7 +343,7 @@
         <!--Page View Controller-->
         <scene sceneID="4eD-UN-hqh">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="3XT-tP-x0y" customClass="PageViewController" customModule="SWiP2" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="VC2" autoresizesArchivedViewToFullSize="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="3XT-tP-x0y" customClass="PageViewController" customModule="SWiP2" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cu2-9h-Tao" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-444" y="596"/>
@@ -338,36 +356,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6d5-UO-nqa">
-                                <rect key="frame" x="319" y="35" width="30" height="34"/>
-                                <fontDescription key="fontDescription" name="Averta-Black" family="Averta" pointSize="17"/>
-                                <state key="normal" title="X">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="cTR-Mh-HJh" kind="show" id="riR-we-VkO"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PAGE 2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g2F-58-lfr">
                                 <rect key="frame" x="159" y="78" width="56.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cQ3-Xf-io2">
+                                <rect key="frame" x="96" y="488" width="183" height="39"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="183" id="2ad-A1-qS7"/>
+                                    <constraint firstAttribute="height" constant="39" id="vF7-EJ-Vgi"/>
+                                </constraints>
+                                <state key="normal" title="TERMINER TUTO">
+                                    <color key="titleColor" red="0.4039215686" green="0.49019607840000001" blue="0.99215686270000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="changeData:" destination="ebJ-TK-aQV" eventType="touchUpInside" id="fLd-W0-O0U"/>
+                                    <segue destination="cTR-Mh-HJh" kind="show" id="5iy-eH-6bT"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Vsm-DL-QRy" firstAttribute="trailing" secondItem="6d5-UO-nqa" secondAttribute="trailing" constant="26" id="1FD-Me-Oht"/>
                             <constraint firstItem="g2F-58-lfr" firstAttribute="top" secondItem="Vsm-DL-QRy" secondAttribute="top" constant="58" id="389-49-1JD"/>
+                            <constraint firstItem="cQ3-Xf-io2" firstAttribute="centerX" secondItem="QY5-uk-x5O" secondAttribute="centerX" id="7pv-hq-kNt"/>
                             <constraint firstItem="g2F-58-lfr" firstAttribute="centerX" secondItem="QY5-uk-x5O" secondAttribute="centerX" id="f28-dH-9HN"/>
-                            <constraint firstItem="6d5-UO-nqa" firstAttribute="top" secondItem="Vsm-DL-QRy" secondAttribute="top" constant="15" id="sFp-7O-ueX"/>
+                            <constraint firstItem="Vsm-DL-QRy" firstAttribute="bottom" secondItem="cQ3-Xf-io2" secondAttribute="bottom" constant="140" id="fgJ-vY-kdx"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Vsm-DL-QRy"/>
                     </view>
+                    <connections>
+                        <outlet property="endTuto" destination="cQ3-Xf-io2" id="u7t-in-yNb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wRf-ez-yWk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1500" y="596"/>
+            <point key="canvasLocation" x="-1500" y="595.95202398800609"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="mJg-Hr-R6y">
@@ -377,16 +403,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jt0-5X-sku">
-                                <rect key="frame" x="319" y="35" width="30" height="34"/>
-                                <fontDescription key="fontDescription" name="Averta-Black" family="Averta" pointSize="17"/>
-                                <state key="normal" title="X">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="cTR-Mh-HJh" kind="show" id="qqS-oN-6F2"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PAGE 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gi6-xP-9Ae">
                                 <rect key="frame" x="160" y="82" width="54.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -397,16 +413,14 @@
                         <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="gi6-xP-9Ae" firstAttribute="centerX" secondItem="bCq-OH-igV" secondAttribute="centerX" id="eMA-fc-tV7"/>
-                            <constraint firstItem="q8F-rV-Tep" firstAttribute="trailing" secondItem="jt0-5X-sku" secondAttribute="trailing" constant="26" id="gvw-67-b7i"/>
                             <constraint firstItem="gi6-xP-9Ae" firstAttribute="top" secondItem="q8F-rV-Tep" secondAttribute="top" constant="62" id="nbM-qS-2hT"/>
-                            <constraint firstItem="jt0-5X-sku" firstAttribute="top" secondItem="q8F-rV-Tep" secondAttribute="top" constant="15" id="nyj-JZ-xkE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="q8F-rV-Tep"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="54e-mZ-ozY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2591.1999999999998" y="595.95202398800609"/>
+            <point key="canvasLocation" x="-2177" y="596"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="qh6-wY-doa">
@@ -659,6 +673,6 @@ Tous les 3 armés d’une conscience écologique nous avons décidé de créer S
         <image name="visible" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="riR-we-VkO"/>
+        <segue reference="lI6-t1-euU"/>
     </inferredMetricsTieBreakers>
 </document>
