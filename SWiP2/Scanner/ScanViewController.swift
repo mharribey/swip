@@ -16,7 +16,6 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
     @IBOutlet weak var bloc2: UIView!
     @IBOutlet weak var bloc3: UIView!
     @IBOutlet weak var bloc4: UIView!
-    @IBOutlet weak var blocCentral: UIView!
     @IBOutlet weak var infoLabel: UILabel!
     
     let defaults = UserDefaults.standard
@@ -30,6 +29,7 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
     var total = 0.0
     var articleList = ""
     var articlePrice = ""
+    var totalSpend = UserDefaults.standard.object(forKey: "total") as? Double ?? 0.0
     var array: [[String: String]] = []
     
     var infos: [String: String] = [:]
@@ -153,10 +153,20 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
                                     nbArticles += 1
                                     if let value = Double(article.value) {
                                         total += value
+                                        
+                                        UserDefaults.standard.set(totalSpend, forKey: "total")
+
                                         articlePrice += "\(value) € \n"
                                     }
                                     articleList += "\(article.key) \n"
                                 }
+                                
+                                if (UserDefaults.standard.object(forKey: "total") != nil) {
+                                    totalSpend += total
+                                } else {
+                                    totalSpend = total
+                                }
+                                
                                 result += ", vous avez acheté \(nbArticles) articles pour un montant total de \(total) €"
                             }
                         }
@@ -179,11 +189,16 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
                         self.array = self.defaults.object(forKey: "Result") as? [[String: String]] ?? [[String: String]]()
                     }
                     
-                        self.infos = ["date": self.date, "shop": self.shop, "total": (self.total.description), "articleList": self.articleList, "articlePrice": self.articlePrice, "articleCount": (self.nbArticles.description)]
+                    self.infos = ["date": self.date, "shop": self.shop, "total": (self.total.description), "articleList": self.articleList, "articlePrice": self.articlePrice, "articleCount": (self.nbArticles.description)]
+                    
+                    
+                        
                     
                     self.array.append(self.infos)
                     self.defaults.set(self.array, forKey: "Result")
-                    
+  
+                    UserDefaults.standard.set(self.totalSpend, forKey: "total")
+                        
                     self.result = ""
                     self.date = ""
                     self.shop = ""

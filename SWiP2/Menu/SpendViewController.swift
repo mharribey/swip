@@ -1,45 +1,25 @@
 //
-//  MenuViewController.swift
+//  SpendViewController.swift
 //  SWiP2
 //
-//  Created by Mathieu Harribey on 08/11/2017.
+//  Created by Mathieu Harribey on 10/11/2017.
 //  Copyright © 2017 Mathieu Harribey. All rights reserved.
 //
 
 import UIKit
 
-class MenuViewController: UIViewController {
+class SpendViewController: UIViewController {
 
-    @IBOutlet weak var supprimerBtn: UIView!
-    @IBOutlet weak var tutorielBtn: UIView!
-    @IBOutlet weak var aboutBtn: UIView!
+    @IBOutlet weak var spendNbr: UILabel!
     
-    var savedArray = UserDefaults.standard.object(forKey: "Result") as? [[String: String]]
+    var i : Double = 0.0
+    var totalSpend = UserDefaults.standard.object(forKey: "total") as? Double ?? 0.0
+    var timer : Timer?
 
-    @IBAction func supprimerAll(_ sender: Any) {
-        let alert = UIAlertController(title: "Réinitialiser", message: "Vous allez supprimés tous vos tickets enregistrés.", preferredStyle: .alert)
-        
-        alert.addAction(UIAlertAction(title: "Annuler", style: .cancel, handler: {
-            (nil) in
-        }))
-        alert.addAction(UIAlertAction(title: "Confirmer", style: .default, handler:
-            { (nil) in
-                self.savedArray = nil
-                UserDefaults.standard.set(self.savedArray, forKey: "Result")
-        }))
-        
-        present(alert, animated: true, completion: nil)
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tutorielBtn.layer.cornerRadius = 8
-        supprimerBtn.layer.cornerRadius = 8
-        aboutBtn.layer.cornerRadius = 8
-        
-        tutorielBtn.clipsToBounds = true
-        supprimerBtn.clipsToBounds = true
-        aboutBtn.clipsToBounds = true
+        print(self.totalSpend.description)
         
         let topColor = UIColor(red: 103/255, green: 125/255, blue: 253/255, alpha: 1)
         let bottomColor = UIColor(red: 63/255, green: 91/255, blue: 254/255, alpha: 1)
@@ -54,13 +34,25 @@ class MenuViewController: UIViewController {
         gradientLayer.frame = self.view.bounds
         self.view.layer.insertSublayer(gradientLayer, at: 0)
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        timer =  Timer.scheduledTimer(timeInterval: 0.01, target: self, selector:#selector(SpendViewController.changeText), userInfo: nil, repeats: true)
+    }
+    
+    @objc func changeText(){
+        if totalSpend > 0.0 {
+            i+=1
+            self.spendNbr.text = i.description + " €"
+        }
+        if i == totalSpend {
+            timer?.invalidate()
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
     
 
     /*

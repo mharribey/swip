@@ -14,6 +14,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var tableView: UITableView!
     
     var savedArray = UserDefaults.standard.object(forKey: "Result") as? [[String: String]]
+    var totalSpend = UserDefaults.standard.object(forKey: "total") as? Double ?? 0.0
+    var data = 0.0
     
     var height: CGFloat = UITableViewAutomaticDimension
     var maxHeight: [Int] = []
@@ -21,7 +23,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         scanButton.layer.cornerRadius = 24
         scanButton.clipsToBounds = true
         
@@ -95,7 +96,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
-        
         self.tableView.beginUpdates()
         
         if (height == UITableViewAutomaticDimension){
@@ -122,8 +122,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     // Override to support editing the table view.
     internal func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCellEditingStyle.delete {
+            if let papapa = Double(savedArray![indexPath.row]["total"]!) {
+                print(papapa)
+                data = papapa
+            } else {
+                print("Can't convert to Double")
+            }
+            
             savedArray!.remove(at: indexPath.row)
+            
             UserDefaults.standard.set(savedArray, forKey: "Result")
+            UserDefaults.standard.set(totalSpend - data, forKey: "total")
             tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
         }
     }

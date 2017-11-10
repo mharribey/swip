@@ -13,6 +13,7 @@
 		4E1F90801FB4648900DBEE7B /* BillTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1F907F1FB4648900DBEE7B /* BillTableViewCell.swift */; };
 		4E1F90821FB5A22200DBEE7B /* TutoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1F90811FB5A22200DBEE7B /* TutoViewController.swift */; };
 		4E1F90841FB5A26500DBEE7B /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1F90831FB5A26500DBEE7B /* PageViewController.swift */; };
+		4EAEF45C1FB5F11600EFFCF4 /* SpendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EAEF45B1FB5F11600EFFCF4 /* SpendViewController.swift */; };
 		4ECF1BF91FB30257005B93C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECF1BF81FB30257005B93C1 /* AppDelegate.swift */; };
 		4ECF1BFB1FB30257005B93C1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECF1BFA1FB30257005B93C1 /* ViewController.swift */; };
 		4ECF1BFE1FB30257005B93C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4ECF1BFC1FB30257005B93C1 /* Main.storyboard */; };
@@ -29,6 +30,7 @@
 		4E1F907F1FB4648900DBEE7B /* BillTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillTableViewCell.swift; sourceTree = "<group>"; };
 		4E1F90811FB5A22200DBEE7B /* TutoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutoViewController.swift; sourceTree = "<group>"; };
 		4E1F90831FB5A26500DBEE7B /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		4EAEF45B1FB5F11600EFFCF4 /* SpendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendViewController.swift; sourceTree = "<group>"; };
 		4ECF1BF51FB30257005B93C1 /* SWiP2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SWiP2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4ECF1BF81FB30257005B93C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4ECF1BFA1FB30257005B93C1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -51,6 +53,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4EAEF4541FB5DC0D00EFFCF4 /* Tutoriel */ = {
+			isa = PBXGroup;
+			children = (
+				4E1F90831FB5A26500DBEE7B /* PageViewController.swift */,
+				4E1F90811FB5A22200DBEE7B /* TutoViewController.swift */,
+			);
+			path = Tutoriel;
+			sourceTree = "<group>";
+		};
+		4EAEF4551FB5DC2200EFFCF4 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				4ECF1C0C1FB30980005B93C1 /* MenuViewController.swift */,
+				4E1F90791FB3470400DBEE7B /* AboutViewController.swift */,
+				4EAEF45B1FB5F11600EFFCF4 /* SpendViewController.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		4EAEF4561FB5DC3400EFFCF4 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				4ECF1BFA1FB30257005B93C1 /* ViewController.swift */,
+				4E1F907F1FB4648900DBEE7B /* BillTableViewCell.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		4EAEF4571FB5DC3E00EFFCF4 /* Scanner */ = {
+			isa = PBXGroup;
+			children = (
+				4ECF1C0A1FB3093C005B93C1 /* ScanViewController.swift */,
+			);
+			path = Scanner;
+			sourceTree = "<group>";
+		};
+		4EAEF4581FB5DC4D00EFFCF4 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				4ECF1BFC1FB30257005B93C1 /* Main.storyboard */,
+				4ECF1C011FB30257005B93C1 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
 		4ECF1BEC1FB30257005B93C1 = {
 			isa = PBXGroup;
 			children = (
@@ -71,16 +118,12 @@
 			isa = PBXGroup;
 			children = (
 				4ECF1BF81FB30257005B93C1 /* AppDelegate.swift */,
-				4ECF1BFA1FB30257005B93C1 /* ViewController.swift */,
-				4E1F907F1FB4648900DBEE7B /* BillTableViewCell.swift */,
-				4ECF1C0A1FB3093C005B93C1 /* ScanViewController.swift */,
-				4ECF1C0C1FB30980005B93C1 /* MenuViewController.swift */,
-				4E1F90791FB3470400DBEE7B /* AboutViewController.swift */,
-				4E1F90831FB5A26500DBEE7B /* PageViewController.swift */,
-				4E1F90811FB5A22200DBEE7B /* TutoViewController.swift */,
-				4ECF1BFC1FB30257005B93C1 /* Main.storyboard */,
+				4EAEF4561FB5DC3400EFFCF4 /* Home */,
+				4EAEF4571FB5DC3E00EFFCF4 /* Scanner */,
+				4EAEF4551FB5DC2200EFFCF4 /* Menu */,
+				4EAEF4541FB5DC0D00EFFCF4 /* Tutoriel */,
+				4EAEF4581FB5DC4D00EFFCF4 /* Storyboard */,
 				4ECF1BFF1FB30257005B93C1 /* Assets.xcassets */,
-				4ECF1C011FB30257005B93C1 /* LaunchScreen.storyboard */,
 				4E1F90761FB312D800DBEE7B /* Averta-Black.otf */,
 				4E1F90751FB312CB00DBEE7B /* Averta.otf */,
 				4ECF1C041FB30257005B93C1 /* Info.plist */,
@@ -169,6 +212,7 @@
 				4E1F907A1FB3470400DBEE7B /* AboutViewController.swift in Sources */,
 				4E1F90801FB4648900DBEE7B /* BillTableViewCell.swift in Sources */,
 				4ECF1C0D1FB30980005B93C1 /* MenuViewController.swift in Sources */,
+				4EAEF45C1FB5F11600EFFCF4 /* SpendViewController.swift in Sources */,
 				4E1F90841FB5A26500DBEE7B /* PageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
