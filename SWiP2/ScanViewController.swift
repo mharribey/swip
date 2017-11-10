@@ -151,9 +151,11 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
                             if let articles = jsonDataArray!["articles"] as? [String: String] {
                                 for article in articles {
                                     nbArticles += 1
-                                    total += Double(article.value)!
+                                    if let value = Double(article.value) {
+                                        total += value
+                                        articlePrice += "\(value) € \n"
+                                    }
                                     articleList += "\(article.key) \n"
-                                    articlePrice += "\(article.value) € \n"
                                 }
                                 result += ", vous avez acheté \(nbArticles) articles pour un montant total de \(total) €"
                             }

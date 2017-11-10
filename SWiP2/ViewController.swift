@@ -88,9 +88,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             maxHeight += [Int(cell.fullBill.bounds.size.height)]
         }
 
-        tableView.rowHeight = CGFloat(maxHeight.max()! + 100)
-
-        print(tableView.rowHeight)
+        tableView.rowHeight = CGFloat(maxHeight.max()! + 80)
         
         return cell
     

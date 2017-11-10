@@ -11,6 +11,8 @@
 		4E1F90781FB3136D00DBEE7B /* Averta.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4E1F90751FB312CB00DBEE7B /* Averta.otf */; };
 		4E1F907A1FB3470400DBEE7B /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1F90791FB3470400DBEE7B /* AboutViewController.swift */; };
 		4E1F90801FB4648900DBEE7B /* BillTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1F907F1FB4648900DBEE7B /* BillTableViewCell.swift */; };
+		4E1F90821FB5A22200DBEE7B /* TutoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1F90811FB5A22200DBEE7B /* TutoViewController.swift */; };
+		4E1F90841FB5A26500DBEE7B /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1F90831FB5A26500DBEE7B /* PageViewController.swift */; };
 		4ECF1BF91FB30257005B93C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECF1BF81FB30257005B93C1 /* AppDelegate.swift */; };
 		4ECF1BFB1FB30257005B93C1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECF1BFA1FB30257005B93C1 /* ViewController.swift */; };
 		4ECF1BFE1FB30257005B93C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4ECF1BFC1FB30257005B93C1 /* Main.storyboard */; };
@@ -25,6 +27,8 @@
 		4E1F90761FB312D800DBEE7B /* Averta-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Averta-Black.otf"; path = "../../../../../../Downloads/Design/Assets + typos/Averta-Black.otf"; sourceTree = "<group>"; };
 		4E1F90791FB3470400DBEE7B /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		4E1F907F1FB4648900DBEE7B /* BillTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillTableViewCell.swift; sourceTree = "<group>"; };
+		4E1F90811FB5A22200DBEE7B /* TutoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutoViewController.swift; sourceTree = "<group>"; };
+		4E1F90831FB5A26500DBEE7B /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		4ECF1BF51FB30257005B93C1 /* SWiP2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SWiP2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4ECF1BF81FB30257005B93C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4ECF1BFA1FB30257005B93C1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -72,6 +76,8 @@
 				4ECF1C0A1FB3093C005B93C1 /* ScanViewController.swift */,
 				4ECF1C0C1FB30980005B93C1 /* MenuViewController.swift */,
 				4E1F90791FB3470400DBEE7B /* AboutViewController.swift */,
+				4E1F90831FB5A26500DBEE7B /* PageViewController.swift */,
+				4E1F90811FB5A22200DBEE7B /* TutoViewController.swift */,
 				4ECF1BFC1FB30257005B93C1 /* Main.storyboard */,
 				4ECF1BFF1FB30257005B93C1 /* Assets.xcassets */,
 				4ECF1C011FB30257005B93C1 /* LaunchScreen.storyboard */,
@@ -158,10 +164,12 @@
 			files = (
 				4ECF1BFB1FB30257005B93C1 /* ViewController.swift in Sources */,
 				4ECF1BF91FB30257005B93C1 /* AppDelegate.swift in Sources */,
+				4E1F90821FB5A22200DBEE7B /* TutoViewController.swift in Sources */,
 				4ECF1C0B1FB3093C005B93C1 /* ScanViewController.swift in Sources */,
 				4E1F907A1FB3470400DBEE7B /* AboutViewController.swift in Sources */,
 				4E1F90801FB4648900DBEE7B /* BillTableViewCell.swift in Sources */,
 				4ECF1C0D1FB30980005B93C1 /* MenuViewController.swift in Sources */,
+				4E1F90841FB5A26500DBEE7B /* PageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
