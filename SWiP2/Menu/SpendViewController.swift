@@ -12,7 +12,7 @@ class SpendViewController: UIViewController {
 
     @IBOutlet weak var spendNbr: UILabel!
     
-    var i : Double = 0.0
+    var i = 0
     var totalSpend = UserDefaults.standard.object(forKey: "total") as? Double ?? 0.0
     var timer : Timer?
 
@@ -36,15 +36,15 @@ class SpendViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        timer =  Timer.scheduledTimer(timeInterval: 0.01, target: self, selector:#selector(SpendViewController.changeText), userInfo: nil, repeats: true)
+        timer =  Timer.scheduledTimer(timeInterval: 0.007, target: self, selector:#selector(SpendViewController.changeText), userInfo: nil, repeats: true)
     }
     
     @objc func changeText(){
-        if totalSpend > 0.0 {
+        if Int(totalSpend) > 0 {
             i+=1
             self.spendNbr.text = i.description + " €"
         }
-        if i == totalSpend {
+        if i == Int(totalSpend) {
             timer?.invalidate()
         }
     }
