@@ -204,6 +204,7 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
                     self.shop = ""
                     self.nbArticles = 0
                     self.total = 0
+                        
                 }))
                 
                 present(alert, animated: true, completion: nil)

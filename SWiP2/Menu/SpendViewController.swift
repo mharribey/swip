@@ -19,7 +19,7 @@ class SpendViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(self.totalSpend.description)
+        print(self.totalSpend)
         
         let topColor = UIColor(red: 103/255, green: 125/255, blue: 253/255, alpha: 1)
         let bottomColor = UIColor(red: 63/255, green: 91/255, blue: 254/255, alpha: 1)
@@ -36,7 +36,7 @@ class SpendViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        timer =  Timer.scheduledTimer(timeInterval: 0.007, target: self, selector:#selector(SpendViewController.changeText), userInfo: nil, repeats: true)
+        timer =  Timer.scheduledTimer(timeInterval: 1/totalSpend, target: self, selector:#selector(SpendViewController.changeText), userInfo: nil, repeats: true)
     }
     
     @objc func changeText(){

@@ -13,11 +13,36 @@ class TutoViewController: UIViewController {
     let data = UserDefaults.standard
 
     @IBOutlet weak var endTuto: UIButton!
+    @IBOutlet weak var skip1: UIButton!
+    @IBOutlet weak var skip2: UIButton!
+    @IBOutlet weak var skip3: UIButton!
+    @IBOutlet weak var scanTuto: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        endTuto.layer.cornerRadius = 8
-        endTuto.clipsToBounds = true
+        if(endTuto != nil){
+            endTuto.layer.cornerRadius = 8
+            endTuto.clipsToBounds = true
+        }
+        if(scanTuto != nil){
+            scanTuto.layer.cornerRadius = 8
+            scanTuto.clipsToBounds = true
+        }
+        
+        
+        
+        let topColor = UIColor(red: 103/255, green: 125/255, blue: 253/255, alpha: 1)
+        let bottomColor = UIColor(red: 63/255, green: 91/255, blue: 254/255, alpha: 1)
+        
+        let gradientColors: [CGColor] = [topColor.cgColor, bottomColor.cgColor]
+        let gradientLocations: [Float] = [0.1, 1.0]
+        let gradientLayer: CAGradientLayer = CAGradientLayer()
+        
+        gradientLayer.colors = gradientColors
+        gradientLayer.locations = gradientLocations as [NSNumber]?
+        
+        gradientLayer.frame = self.view.bounds
+        self.view.layer.insertSublayer(gradientLayer, at: 0)
     }
     
     @IBAction func changeData(_ sender: Any) {

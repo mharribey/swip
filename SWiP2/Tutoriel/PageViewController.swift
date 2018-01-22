@@ -15,8 +15,10 @@ class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UI
     }
     
     lazy var orderedViewControllers: [UIViewController] = {
-        return [self.newVc(viewController: "sbBlue"),
-                self.newVc(viewController: "sbLightBlue")]
+        return [self.newVc(viewController: "sb1"),
+                self.newVc(viewController: "sb2"),
+                self.newVc(viewController: "sb3"),
+                self.newVc(viewController: "sb4")]
     }()
     
     // MARK: Data source functions.

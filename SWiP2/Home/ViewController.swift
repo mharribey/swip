@@ -118,25 +118,65 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return true
     }
     
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let shareAction = UITableViewRowAction(style: UITableViewRowActionStyle.default, title: "Share" , handler: { (action:UITableViewRowAction, indexPath: IndexPath) -> Void in
+
+            let shareMenu = UIAlertController(title: nil, message: "Share using", preferredStyle: .actionSheet)
+            
+            let twitterAction = UIAlertAction(title: "Twitter", style: UIAlertActionStyle.default, handler: { action in
+                print("twitter") //do something
+            })
+            let facebookAction = UIAlertAction(title: "Facebook", style: UIAlertActionStyle.default, handler: { action in
+                print("facebook") //do something
+            })
+            let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil)
+            
+            shareMenu.addAction(twitterAction)
+            shareMenu.addAction(facebookAction)
+            shareMenu.addAction(cancelAction)
+            
+            self.present(shareMenu, animated: true, completion: nil)
+        })
+        
+        let deleteAction = UITableViewRowAction(style: UITableViewRowActionStyle.default, title: "Delete" , handler: { (action:UITableViewRowAction, indexPath: IndexPath) -> Void in
+            
+            if let papapa = Double(self.savedArray![indexPath.row]["total"]!) {
+                self.data = papapa
+                } else {
+                    print("Can't convert to Double")
+                }
+    
+                self.savedArray!.remove(at: indexPath.row)
+    
+                UserDefaults.standard.set(self.savedArray, forKey: "Result")
+                UserDefaults.standard.set(self.totalSpend - self.data, forKey: "total")
+                tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
+            
+        })
+        
+        shareAction.backgroundColor = UIColor.green
+        return [deleteAction, shareAction]
+    }
     
     // Override to support editing the table view.
     internal func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == UITableViewCellEditingStyle.delete {
-            if let papapa = Double(savedArray![indexPath.row]["total"]!) {
-                print(papapa)
-                data = papapa
-            } else {
-                print("Can't convert to Double")
-            }
-            
-            savedArray!.remove(at: indexPath.row)
-            
-            UserDefaults.standard.set(savedArray, forKey: "Result")
-            UserDefaults.standard.set(totalSpend - data, forKey: "total")
-            tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
-        }
+        
+        ////        if editingStyle == UITableViewCellEditingStyle.delete {
+        ////            if let papapa = Double(savedArray![indexPath.row]["total"]!) {
+        ////                print(papapa)
+        ////                data = papapa
+        ////            } else {
+        ////                print("Can't convert to Double")
+        ////            }
+        ////
+        ////            savedArray!.remove(at: indexPath.row)
+        ////
+        ////            UserDefaults.standard.set(savedArray, forKey: "Result")
+        ////            UserDefaults.standard.set(totalSpend - data, forKey: "total")
+        ////            tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
+        ////        }
+        
     }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
